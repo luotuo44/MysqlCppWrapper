@@ -11,6 +11,10 @@
 typedef struct st_mysql MYSQL;
 
 
+#include"QueryResult.h"
+
+
+
 
 namespace DB
 {
@@ -52,6 +56,7 @@ public:
     void setCharacterSet(const std::string &char_set);
     void execute(const std::string &sql);
     long long autoIncrementId();
+    QueryResultRowSet query(const std::string &sql);
 
 
     //sql likes: insert into student(id, name)

@@ -13,7 +13,6 @@ extern "C"
 }
 
 
-
 namespace DB
 {
 
@@ -100,6 +99,19 @@ long long MysqlDB::autoIncrementId()
 {
     return mysql_insert_id(m_conn);
 }
+
+
+QueryResultRowSet MysqlDB::query(const std::string &sql)
+{
+    auto ret = mysql_query(m_conn, sql.c_str());
+    checkIntReturnValue("fail to query for sql " + sql, ret);
+
+    MYSQL_RES *result = mysql_store_result(m_conn);
+    checkPointerReturnValue("fail to store query result for sql " + sql, result);
+
+    return QueryResultRowSet(result);
+}
+
 
 }
 
