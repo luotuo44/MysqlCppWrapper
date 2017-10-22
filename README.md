@@ -66,13 +66,14 @@ for(const auto &row : rows)
 
 输出结果为：
 
->auto increment id = 1
->auto increment id = 2
->id	name	score	
->\------------------------
->1	xiaoming	86
->2	张三			92
-
+```json
+auto increment id = 1
+auto increment id = 2
+id	name	score	
+------------------------
+1	xiaoming	86
+2	张三			92
+```
 
 
 ## 批量插入和查询语句
