@@ -72,7 +72,7 @@ auto increment id = 2
 id	name	score	
 ------------------------
 1	xiaoming	86
-2	张三			92
+2	张三		92
 ```
 
 
