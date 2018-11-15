@@ -70,7 +70,8 @@ double QueryResultColumn::getColumnValue(size_t col, double)const
 
 std::string QueryResultColumn::getColumnValue(size_t col, const std::string &)const
 {
-    return m_row[col];
+    std::string str = (m_row[col] == nullptr) ? "" : m_row[col];
+    return str;
 }
 
 }
